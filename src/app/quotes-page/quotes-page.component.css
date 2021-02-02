@@ -1,0 +1,15 @@
+.myrow1 {
+    /* border: solid blue; */
+    width: 100%;
+}
+.card {
+    width: 600px; 
+    margin-left: 70px;
+    margin-top: 10px;
+    border-color: black;
+    font-family: 'Titillium Web', sans-serif;
+}
+.btn1 {
+    position: absolute;
+    margin-left: 300px;
+}
