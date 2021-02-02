@@ -10,7 +10,7 @@
           <p class="votes" *ngIf='quote'>{{ quote.votes }} votes</p>
           <button type="button" *ngIf='quote' class="btn btn-sm btn-primary" (click)="upVoteClick(i)">Upvote</button>
           <button type="button" *ngIf='quote' class="btn btn-sm btn-primary" (click)="downVoteClick(i)">Downvote</button>
-          <button class="btn1 btn-sm btn danger" (click)='deleteQuote($event,i)'><a class="btn btn-danger btn-sm" href="#">
+          <button class="btn btn-sm btn danger btn1" id="btn1" (click)='deleteQuote($event,i)'><a class="btn btn-danger btn-sm" href="#">
             <i class="fa fa-trash-o"></i> Delete</a>
           </button>
         </div>
@@ -23,7 +23,7 @@
           <p class="votes" *ngIf='quote'>{{ quote.votes }} votes</p>
           <button type="button" *ngIf='quote' class="btn btn-sm btn-primary" (click)="upVoteClick(i)">Upvote</button>
           <button type="button" *ngIf='quote' class="btn btn-sm btn-primary" (click)="downVoteClick(i)">Downvote</button>
-          <button class="btn1 btn-sm btn danger" (click)='deleteQuote($event,i)'><a class="btn btn-danger btn-sm" href="#">
+          <button class="btn btn-sm btn danger btn1" id="btn1" (click)='deleteQuote($event,i)'><a class="btn btn-danger btn-sm" href="#">
               <i class="fa fa-trash-o"></i> Delete</a>
           </button>
         </div>

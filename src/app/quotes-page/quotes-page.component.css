@@ -9,7 +9,10 @@
     border-color: black;
     font-family: 'Titillium Web', sans-serif;
 }
-.btn1 {
+#btn1 {
     position: absolute;
     margin-left: 300px;
+}
+.btn {
+    margin-left: 10px;
 }
