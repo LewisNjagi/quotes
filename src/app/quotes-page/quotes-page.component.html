@@ -1,1 +1,36 @@
-<p>quotes-page works!</p>
+<div class="row myrow1">
+    <div class="col-7">
+      <div class="card" *ngFor='let quote of quotes; let i = index'>
+        <div class="card-body" appHighlight *ngIf="hUpvote()===quote.votes && quote.votes>0">
+          <h5 class="card-title">{{ quote.name }}</h5>
+          <p class="card-text" appHighlight *ngIf="hUpvote()===quote.votes && quote.votes>0">{{ quote.body }}
+          </p>
+          <h6 class="card-subtitle mb-2 text-muted">Date created:{{ quote.date|dateCount }}</h6>
+          <app-quote-details class="details" [quote]='quote'></app-quote-details>
+          <p class="votes" *ngIf='quote'>{{ quote.votes }} votes</p>
+          <button type="button" *ngIf='quote' class="btn btn-sm btn-primary" (click)="upVoteClick(i)">Upvote</button>
+          <button type="button" *ngIf='quote' class="btn btn-sm btn-primary" (click)="downVoteClick(i)">Downvote</button>
+          <button class="btn1 btn-sm btn danger" (click)='deleteQuote($event,i)'><a class="btn btn-danger btn-sm" href="#">
+            <i class="fa fa-trash-o"></i> Delete</a>
+          </button>
+        </div>
+        <div class="card-body" *ngIf="hUpvote()!==quote.votes || quote.votes===0">
+          <h5 class="card-title">{{ quote.name }}</h5>
+          <p class="card-text" *ngIf="hUpvote()!==quote.votes || quote.votes===0">{{ quote.body }}
+          </p>
+          <h6 class="card-subtitle mb-2 text-muted">Date created:{{ quote.date|dateCount }}</h6>
+          <app-quote-details class="details" [quote]='quote'></app-quote-details>
+          <p class="votes" *ngIf='quote'>{{ quote.votes }} votes</p>
+          <button type="button" *ngIf='quote' class="btn btn-sm btn-primary" (click)="upVoteClick(i)">Upvote</button>
+          <button type="button" *ngIf='quote' class="btn btn-sm btn-primary" (click)="downVoteClick(i)">Downvote</button>
+          <button class="btn1 btn-sm btn danger" (click)='deleteQuote($event,i)'><a class="btn btn-danger btn-sm" href="#">
+              <i class="fa fa-trash-o"></i> Delete</a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
+    </div>
+  </div>
+  
